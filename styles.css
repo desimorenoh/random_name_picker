@@ -1,0 +1,253 @@
+* {
+    font-family: sans-serif;
+    color: #0A1C28;
+}
+
+.outer-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+}
+
+.wrapper {
+    width: 600px;
+    min-height: 400px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    background: #5882FA;
+    text-align: center;
+    border-radius: 15px;
+    padding: 50px;
+}
+
+h3 {
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.button {
+    background: white;
+    display: block;
+    margin: 10px auto;
+    width: 200px;
+    padding: 10px;
+    color: #5882FA;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    transition: all .33s ease;
+    text-transform: uppercase;
+}
+
+#start-over {
+    background: red;
+    width: fit-content;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+}
+
+#start-over:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+}
+
+.copy h5 {
+    margin: 50px 0 0 0;
+}
+
+#selected-name {
+    font-size: 50px;
+    line-height: 1;
+}
+
+.name-wrapper {
+    background: #41848F;
+    padding: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+}
+
+.fraction {
+    text-align: center;
+    display: block;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+span {
+    color: white;
+}
+
+#the-names {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 3px;
+    font-size: 14px;
+    color: white;
+    position: relative;
+}
+
+li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 0%;
+    transition: all .33s ease;
+    background-color: white;
+}
+
+li.crossed:before {
+    width: 100%;
+}
+
+#clouds {
+    padding: 100px 0;
+    background: #c9dbe9;
+    background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+    background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+    background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
+
+/*Time to finalise the cloud shape*/
+
+.cloud {
+    width: 200px;
+    height: 60px;
+    background: #fff;
+    border-radius: 200px;
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
+    position: relative;
+}
+
+.cloud:before,
+.cloud:after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+    width: 120px;
+    height: 120px;
+    top: -55px;
+    left: auto;
+    right: 15px;
+}
+
+
+/*Time to animate*/
+
+.x1 {
+    -webkit-animation: moveclouds 15s linear infinite;
+    -moz-animation: moveclouds 15s linear infinite;
+    -o-animation: moveclouds 15s linear infinite;
+}
+
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+
+.x2 {
+    left: 200px;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.6;
+    /*opacity proportional to the size*/
+    /*Speed will also be proportional to the size and opacity*/
+    /*More the speed. Less the time in 's' = seconds*/
+    -webkit-animation: moveclouds 25s linear infinite;
+    -moz-animation: moveclouds 25s linear infinite;
+    -o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+    left: -250px;
+    top: -200px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.8;
+    /*opacity proportional to the size*/
+    -webkit-animation: moveclouds 20s linear infinite;
+    -moz-animation: moveclouds 20s linear infinite;
+    -o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+    left: 470px;
+    top: -250px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.75;
+    /*opacity proportional to the size*/
+    -webkit-animation: moveclouds 18s linear infinite;
+    -moz-animation: moveclouds 18s linear infinite;
+    -o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+    left: -150px;
+    top: -150px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.8;
+    /*opacity proportional to the size*/
+    -webkit-animation: moveclouds 20s linear infinite;
+    -moz-animation: moveclouds 20s linear infinite;
+    -o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+    0% {
+        margin-left: 1000px;
+    }
+    100% {
+        margin-left: -1000px;
+    }
+}
+
+@-moz-keyframes moveclouds {
+    0% {
+        margin-left: 1000px;
+    }
+    100% {
+        margin-left: -100px;
+    }
+}
+
+@-o-keyframes moveclouds {
+    0% {
+        margin-left: 1000px;
+    }
+    100% {
+        margin-left: -1000px;
+    }
+}
